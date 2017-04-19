@@ -348,6 +348,12 @@
 
         </li>
 
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">json-rpc2.</span>jsonrpc</span>
+
+        </li>
+
     </ol></li>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.json-rpc2.Client">module json-rpc2.Client</a><ol>
@@ -5896,6 +5902,115 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-rpc2.jsonrpc">module json-rpc2.jsonrpc</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-rpc2.jsonrpc.Client">
+            function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>Client
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-rpc2.jsonrpc.Connection">
+            function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>Connection
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-rpc2.jsonrpc.ES5Class">
+            function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>ES5Class
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-rpc2.jsonrpc.Endpoint">
+            function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>Endpoint
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-rpc2.jsonrpc.EventEmitter">
+            function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>EventEmitter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-rpc2.jsonrpc.HttpServerConnection">
+            function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>HttpServerConnection
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-rpc2.jsonrpc.Server">
+            function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>Server
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-rpc2.jsonrpc.SocketConnection">
+            function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>SocketConnection
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-rpc2.jsonrpc.WebSocketConnection">
+            function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>WebSocketConnection
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-rpc2.jsonrpc.Websocket">
+            function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>Websocket
+            <span class="apidocSignatureSpan">(request, socket, body, protocols, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-rpc2.jsonrpc._">
+            function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>_
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>Error</span>
+
+        </li>
+
+    </ol></li>
+
 </ol></div>
 
 <div class="apidocSectionDiv">
@@ -6695,6 +6810,8 @@ parser.onValue = function (decoded) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
+
+
 
 
 
@@ -23384,6 +23501,400 @@ _authHeader: function(headers){
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-rpc2.jsonrpc" id="apidoc.module.json-rpc2.jsonrpc">module json-rpc2.jsonrpc</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-rpc2.jsonrpc.Client" id="apidoc.element.json-rpc2.jsonrpc.Client">
+        function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>Client
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Constructor(){
+  var args = BetterCurry.flatten(arguments);
+
+  if (!(this instanceof Constructor)) {
+    // auto instantiation
+    return splat(Constructor, '$create', args);
+  }
+
+  if (superApply(this, Constructor, args)) {
+    spo(this, Constructor.prototype); // always need to restore prototype after superApply
+  }
+
+  // old school new operator, call the constructor
+  if (this.construct &amp;&amp; this.construct !== noop) {
+    splat(this, 'construct', args);
+    copyArgs(this, args);
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (!/^wss?:\/\//i.test(self.host)) {
+  self.host = 'ws://' + self.host + ':' + self.port + '/';
+}
+
+this._authHeader(headers);
+
+socket = new WebSocket.<span class="apidocCodeKeywordSpan">Client</span>(self.host, null, {headers: headers});
+
+conn = new WebSocketConnection(self, socket);
+
+parser = new JsonParser();
+
+parser.onValue = function parseOnValue(decoded){
+  if (this.stack.length) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-rpc2.jsonrpc.Connection" id="apidoc.element.json-rpc2.jsonrpc.Connection">
+        function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>Connection
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Constructor(){
+  var args = BetterCurry.flatten(arguments);
+
+  if (!(this instanceof Constructor)) {
+    // auto instantiation
+    return splat(Constructor, '$create', args);
+  }
+
+  if (superApply(this, Constructor, args)) {
+    spo(this, Constructor.prototype); // always need to restore prototype after superApply
+  }
+
+  // old school new operator, call the constructor
+  if (this.construct &amp;&amp; this.construct !== noop) {
+    splat(this, 'construct', args);
+    copyArgs(this, args);
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-rpc2.jsonrpc.ES5Class" id="apidoc.element.json-rpc2.jsonrpc.ES5Class">
+        function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>ES5Class
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ES5Class(){ }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-rpc2.jsonrpc.Endpoint" id="apidoc.element.json-rpc2.jsonrpc.Endpoint">
+        function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>Endpoint
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Constructor(){
+  var args = BetterCurry.flatten(arguments);
+
+  if (!(this instanceof Constructor)) {
+    // auto instantiation
+    return splat(Constructor, '$create', args);
+  }
+
+  if (superApply(this, Constructor, args)) {
+    spo(this, Constructor.prototype); // always need to restore prototype after superApply
+  }
+
+  // old school new operator, call the constructor
+  if (this.construct &amp;&amp; this.construct !== noop) {
+    splat(this, 'construct', args);
+    copyArgs(this, args);
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-rpc2.jsonrpc.EventEmitter" id="apidoc.element.json-rpc2.jsonrpc.EventEmitter">
+        function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>EventEmitter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Constructor(){
+  var args = BetterCurry.flatten(arguments);
+
+  if (!(this instanceof Constructor)) {
+    // auto instantiation
+    return splat(Constructor, '$create', args);
+  }
+
+  if (superApply(this, Constructor, args)) {
+    spo(this, Constructor.prototype); // always need to restore prototype after superApply
+  }
+
+  // old school new operator, call the constructor
+  if (this.construct &amp;&amp; this.construct !== noop) {
+    splat(this, 'construct', args);
+    copyArgs(this, args);
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-rpc2.jsonrpc.HttpServerConnection" id="apidoc.element.json-rpc2.jsonrpc.HttpServerConnection">
+        function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>HttpServerConnection
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Constructor(){
+  var args = BetterCurry.flatten(arguments);
+
+  if (!(this instanceof Constructor)) {
+    // auto instantiation
+    return splat(Constructor, '$create', args);
+  }
+
+  if (superApply(this, Constructor, args)) {
+    spo(this, Constructor.prototype); // always need to restore prototype after superApply
+  }
+
+  // old school new operator, call the constructor
+  if (this.construct &amp;&amp; this.construct !== noop) {
+    splat(this, 'construct', args);
+    copyArgs(this, args);
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      response.id = decoded.id;
+      reply(response);
+    } else {
+      reply();
+    }
+  };
+
+  var conn = new classes.<span class="apidocCodeKeywordSpan">HttpServerConnection</span>(self, req, res);
+
+  self.handleCall(decoded, conn, callback);
+}; // function handle(buf)
+
+req.on('data', function requestData(chunk) {
+  buffer = buffer + chunk;
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-rpc2.jsonrpc.Server" id="apidoc.element.json-rpc2.jsonrpc.Server">
+        function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>Server
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Constructor(){
+  var args = BetterCurry.flatten(arguments);
+
+  if (!(this instanceof Constructor)) {
+    // auto instantiation
+    return splat(Constructor, '$create', args);
+  }
+
+  if (superApply(this, Constructor, args)) {
+    spo(this, Constructor.prototype); // always need to restore prototype after superApply
+  }
+
+  // old school new operator, call the constructor
+  if (this.construct &amp;&amp; this.construct !== noop) {
+    splat(this, 'construct', args);
+    copyArgs(this, args);
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-rpc2.jsonrpc.SocketConnection" id="apidoc.element.json-rpc2.jsonrpc.SocketConnection">
+        function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>SocketConnection
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Constructor(){
+  var args = BetterCurry.flatten(arguments);
+
+  if (!(this instanceof Constructor)) {
+    // auto instantiation
+    return splat(Constructor, '$create', args);
+  }
+
+  if (superApply(this, Constructor, args)) {
+    spo(this, Constructor.prototype); // always need to restore prototype after superApply
+  }
+
+  // old school new operator, call the constructor
+  if (this.construct &amp;&amp; this.construct !== noop) {
+    splat(this, 'construct', args);
+    copyArgs(this, args);
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      },
+
+      handleRaw: function (socket) {
+var self = this, conn, parser, requireAuth;
+
+Endpoint.trace('&lt;--', 'Accepted socket connection');
+
+conn = new classes.<span class="apidocCodeKeywordSpan">SocketConnection</span>(self, socket);
+parser = new JsonParser();
+requireAuth = !!this.authHandler;
+
+parser.onValue = function (decoded) {
+  if (this.stack.length) {
+    return;
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-rpc2.jsonrpc.WebSocketConnection" id="apidoc.element.json-rpc2.jsonrpc.WebSocketConnection">
+        function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>WebSocketConnection
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Constructor(){
+  var args = BetterCurry.flatten(arguments);
+
+  if (!(this instanceof Constructor)) {
+    // auto instantiation
+    return splat(Constructor, '$create', args);
+  }
+
+  if (superApply(this, Constructor, args)) {
+    spo(this, Constructor.prototype); // always need to restore prototype after superApply
+  }
+
+  // old school new operator, call the constructor
+  if (this.construct &amp;&amp; this.construct !== noop) {
+    splat(this, 'construct', args);
+    copyArgs(this, args);
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      handleWebsocket: function (request, socket, body) {
+var self = this, conn, parser;
+
+socket = new WebSocket(request, socket, body);
+
+Endpoint.trace('&lt;--', 'Accepted Websocket connection');
+
+conn = new classes.<span class="apidocCodeKeywordSpan">WebSocketConnection</span>(self, socket);
+parser = new JsonParser();
+
+parser.onValue = function (decoded) {
+  if (this.stack.length) {
+    return;
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-rpc2.jsonrpc.Websocket" id="apidoc.element.json-rpc2.jsonrpc.Websocket">
+        function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>Websocket
+        <span class="apidocSignatureSpan">(request, socket, body, protocols, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Websocket = function (request, socket, body, protocols, options) {
+  options = options || {};
+
+  this._stream = socket;
+  this._driver = driver.http(request, {maxLength: options.maxLength, protocols: protocols});
+
+  var self = this;
+  if (!this._stream || !this._stream.writable) return;
+  if (!this._stream.readable) return this._stream.end();
+
+  var catchup = function() { self._stream.removeListener('data', catchup) };
+  this._stream.on('data', catchup);
+
+  API.call(this, options);
+
+  process.nextTick(function() {
+    self._driver.start();
+    self._driver.io.write(body);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-rpc2.jsonrpc._" id="apidoc.element.json-rpc2.jsonrpc._">
+        function <span class="apidocSignatureSpan">json-rpc2.jsonrpc.</span>_
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function lodash(value) {
+  if (isObjectLike(value) &amp;&amp; !isArray(value) &amp;&amp; !(value instanceof LazyWrapper)) {
+    if (value instanceof LodashWrapper) {
+      return value;
+    }
+    if (hasOwnProperty.call(value, '__chain__') &amp;&amp; hasOwnProperty.call(value, '__wrapped__')) {
+      return wrapperClone(value);
+    }
+  }
+  return new LodashWrapper(value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
 
 
 </div>
